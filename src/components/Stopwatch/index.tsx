@@ -17,11 +17,9 @@ export default function Stopwatch() {
 	const [date, setDate] = useState<Date>(new Date());
 
 	useEffect(() => {
-		const timer = setTimeout(() => {
-			setDate(new Date());
-		}, 1);
+		const timer = setInterval(() => setDate(new Date()));
 
-		return () => clearTimeout(timer);
+		return () => clearInterval(timer);
 	}, [date]);
 	// #endregion
 
